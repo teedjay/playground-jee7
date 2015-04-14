@@ -1,12 +1,17 @@
+## IDEA Directory-based project format
+.idea/
+
+## IDEA File-based project format
+*.ipr
+*.iml
+*.iws
+
+## OSX files
+.DS_Store
+
+## Java and Maven files
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
 *.war
 *.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+target/
+classes/
