@@ -31,7 +31,7 @@ public class TestResource {
 
     private TestData createSomeTestData() {
         TestData d = new TestData();
-        d.setName("Hi There");
+        d.setName("TeeDjay");
         d.setAge(18 + System.currentTimeMillis() % 50);
         return d;
     }

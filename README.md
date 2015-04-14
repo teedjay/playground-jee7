@@ -6,7 +6,7 @@ Example JEE7 Application
 Clone and fork this as a starting point when testing JEE7 features with JSE8. 
 
 ### AppServer
-Runs great on any JEE7 server, tested using WildFly 8.2 final.
+Should deloy and run on any JEE7 server (tested using WildFly 8.2 Final).
 
 ### Compiling
 The build uses Maven and has "clean install" as default target.  
@@ -17,5 +17,5 @@ Install war file on WidlFly and browser to :
 `http://localhost:8080/jee7-1.0-SNAPSHOT/`
 
 ### Testing
-This will run just all tests :
+This will run all unit tests :  
 `mvn test`
