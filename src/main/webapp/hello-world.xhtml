@@ -11,7 +11,7 @@
 <h:body>
     <h:form>
         <h:inputText id="name" value="#{helloWorldView.name}" a:placeholder="What's your name?"/>
-        <h:commandButton value="Submit"/>
+        <h:commandButton value="Submit" action="#{helloWorldView.submit}"/>
         <h:outputText value="Hello, #{helloWorldView.name}" rendered="#{not empty helloWorldView.name}"/>
     </h:form>
 </h:body>

@@ -22,4 +22,14 @@ public class HelloWorldView {
         this.name = name;
     }
 
+    public void submit() {
+        if (name == null) name = "";
+        name = name.trim();
+        if (name.length() > 1) {
+            name = name.substring(0, 1).toUpperCase().concat(name.substring(1).toLowerCase());
+        } else {
+            name = name.toUpperCase();
+        }
+    }
+
 }
