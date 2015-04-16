@@ -12,7 +12,7 @@ import java.util.Date;
  * Defines a simple method to add JMS messages onto a named queue
  *
  * Create a durable queue using this command with : jboss-cli.sh
- * jms-queue add --queue-address=MyQueue --entries=java:/jms/queue/MyQueue
+ *
  *
  * Verify in WildFly gui that queue is in JNDI as as : java:/jms/queue/MyQueue
  *
