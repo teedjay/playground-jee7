@@ -6,13 +6,12 @@
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
-    <title>Hello there JSF</title>
+    <title>Hello there JMS</title>
 </h:head>
 <h:body>
     <h:form>
-        <h:inputText id="name" value="#{helloWorldView.name}" a:placeholder="What's your name?"/>
-        <h:commandButton value="Submit" action="#{helloWorldView.submit}"/>
-        <h:outputText value="Hello, #{helloWorldView.name}" rendered="#{not empty helloWorldView.name}"/>
+        <h:outputText value="We have processed #{jmsCounter.counter} messages so far."/>
+        <h:commandButton value="Refresh Page" />
     </h:form>
 </h:body>
 </html>

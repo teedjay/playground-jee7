@@ -1,5 +1,7 @@
 package teedjay.rest;
 
+import teedjay.jms.JmsResource;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.Arrays;
@@ -16,7 +18,8 @@ public class RestRoot extends Application {
 
     public Set<Class<?>> getClasses() {
         return new HashSet<Class<?>>(Arrays.asList(
-            TestResource.class
+            TestResource.class,
+            JmsResource.class
         ));
     }
 
