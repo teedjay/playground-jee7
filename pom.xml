@@ -30,6 +30,8 @@
             <version>5.2</version>
         </dependency>
         -->
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -37,12 +39,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <!-- used by the JmsClient to access JMS remotely -->
             <groupId>org.wildfly</groupId>
             <artifactId>wildfly-jms-client-bom</artifactId>
             <version>8.2.0.Final</version>
             <type>pom</type>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>

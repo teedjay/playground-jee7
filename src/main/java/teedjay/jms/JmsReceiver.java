@@ -23,8 +23,10 @@ public class JmsReceiver implements MessageListener {
     @Override
     public void onMessage(Message message) {
         try {
-            System.out.println("Received and handled : " + message.getBody(String.class));
-            Thread.sleep(1000);
+            String json = message.getBody(String.class);
+            JmsPayload p = JmsPayload.fromJSON(json);
+            Thread.sleep(1000); // simulate some work
+            System.out.println("Received payload for processing message " + p.getMsgNo() + " and handled action : " + p.getCurrentStep());
             jmsCounter.increment();
         } catch (Exception e) {
             System.err.println("Error while handling message payload: " + e.getMessage());

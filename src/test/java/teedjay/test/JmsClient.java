@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
- * Manual testing of remote access to the JMS queue system
+ * Manual client to push json onto remote JMS queue system
  *
  * @author thore
  */
@@ -18,10 +18,9 @@ public class JmsClient {
     private static final Logger log = Logger.getLogger(JmsClient.class.getName());
 
     // Set up all the default values
-    private static final String DEFAULT_MESSAGE = "{\"message\":\"Hello, World - says the remote JmsClient!\"}";
     private static final String DEFAULT_CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
     private static final String DEFAULT_DESTINATION = "jms/queue/MyQueue";
-    private static final String DEFAULT_MESSAGE_COUNT = "100";
+    private static final String DEFAULT_MESSAGE_COUNT = "10";
     private static final String DEFAULT_USERNAME = "jmsuser";
     private static final String DEFAULT_PASSWORD = "jmspwd123";
     private static final String INITIAL_CONTEXT_FACTORY = "org.jboss.naming.remote.client.InitialContextFactory";
@@ -61,9 +60,10 @@ public class JmsClient {
             log.info("Found destination \"" + destinationString + "\" in JNDI");
 
             int count = Integer.parseInt(System.getProperty("message.count", DEFAULT_MESSAGE_COUNT));
-            String content = System.getProperty("message.content", DEFAULT_MESSAGE);
 
             try (JMSContext context = connectionFactory.createContext(userName, password)) {
+
+                String content = "{ \"id\" : \"some-id\",  \"msg_no\" : \"some-msg_no\",  \"current_step\" : \"some-current_step\" }";
 
                 log.info("Sending " + count + " messages with content: " + content);
                 JMSProducer producer = context.createProducer();
