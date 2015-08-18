@@ -16,6 +16,7 @@ import java.util.Set;
 @ApplicationPath("/rest")
 public class RestRoot extends Application {
 
+    // TODO is this really needed in JEE7, or will CDI scan classpath and find resouces?
     public Set<Class<?>> getClasses() {
         return new HashSet<Class<?>>(Arrays.asList(
             TestResource.class,
